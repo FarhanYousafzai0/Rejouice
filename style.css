@@ -1,25 +1,27 @@
-*{
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-   font-family: NB;
-
-/* background-color: transparent; */
+    font-family: NB;
+    box-sizing: border-box;
 }
 
 @font-face {
     font-family: NB;
     src: url(./fonts/NBInternationalProBoo.woff2);
-    
 }
 @font-face {
     font-family: RH;
     src: url(./fonts/Rejouice-Headline.woff2);
 }
 
-html,body{
+html, body {
     width: 100%;
     height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
+
+/* Loader Styling */
 .loader {
     height: 100vh;
     width: 100%;
@@ -29,243 +31,163 @@ html,body{
     gap: 0.5rem;
     justify-content: center;
     align-items: center;
-    z-index: 2;
-    position: fixed; /* Use fixed for better viewport coverage */
-    top: 0; /* Ensure it starts at the top */
-    opacity: 1; /* Ensure it's visible */
-  }
-  .loader h3 {
-    font-size: 2vw;
-  }
-  
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    opacity: 1;
+}
 
-.page-1{
+.loader h3 {
+    font-size: 2vw;
+}
+
+/* Page 1: Hero Section */
+.page-1 {
     height: 100vh;
     width: 100%;
     position: relative;
 }
-.page-1 video{
+
+.page-1 video {
     height: 100%;
     width: 100%;
     object-fit: cover;
     position: absolute;
 }
-.page-1-content{
+
+.page-1-content {
     height: 100vh;
     width: 100%;
     position: relative;
-    /* background-color: rgba(0, 0, 0, 0.822); */
-    z-index: 10;
     color: white;
-    
-}
-.page-content-5{
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    /* background-color: rgba(0, 0, 0, 0.822); */
     z-index: 10;
 }
 
-.cursor-5 {
-    width: 5rem;
-    height: 5rem;
-   background-color: black;
- z-index: 99;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    pointer-events: none; /* Prevents cursor from blocking clicks */
-    position: fixed;
-    transform: translate(50%, -50%);
-}
-
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-
-   
-    padding: 1vw 2.5vw;
-    /* background-color: red; */
-}
-nav p{
-    font-size: 1.4rem;
-}
 .page-1-content h1 {
     position: absolute;
-    bottom: 0%;
+    bottom: 0;
     left: 50%;
     transform: translate(-50%);
     font-size: 27vw;
     font-family: RH;
     font-weight: 500;
     line-height: 27vw;
-white-space: nowrap;
+    white-space: nowrap;
 }
-.page-1-content h1 span{
+
+.page-1-content h1 span {
     font-family: RH;
     display: inline-flex;
 }
 
-.cursor{
+.cursor {
     width: 5rem;
     height: 5rem;
-    background-color: rgba(0, 0, 0, 0.473);
-    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 99;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    pointer-events: none; /* Prevents cursor from blocking clicks */
-    position: fixed; /* Required for transform to work */
+    pointer-events: none;
+    position: fixed;
     transform: translate(50%, -50%);
-   
-}
-
-
-
-.cursor p,.cursor-5 p {
+    color: white;
     font-size: 1rem;
     font-weight: 400;
-    color: white; /* Ensures good visibility */
 }
 
-/* Page-2 */
-.page-2{
+/* Page 2 */
+.page-2 {
     width: 100%;
     height: 100vh;
-   
 }
-.elem-items{
+
+.elem-items {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
-
-   
     padding: 1vw 2.5vw;
-
 }
-.elem-items p{
+
+.elem-items p {
     font-size: 2vw;
 }
+
 .elem {
-      text-align:start;
     padding: 1vw 2.5vw;
- 
+    text-align: start;
 }
+
 .elem > h6 {
     font-size: 4rem;
- 
-   font-weight: 500;
-    display: inline-block;
+    font-weight: 500;
     margin: 10px 0;
     line-height: 1.5;
-   
-  }
-/* page-3 */
-.page-3{
+}
+
+/* Page 3 */
+.page-3 {
     min-height: 100vh;
-    min-width: 100%;
-    position: relative;
-    padding-top:10vw;
-   
+    padding-top: 10vw;
 }
-.page-3-content{
-    text-align: center;
-}
-.page-3-content h2{
+
+.page-3-content h2 {
     font-size: 2vw;
     padding-bottom: 1vw;
     font-weight: 500;
 }
-.page-3-content h2 span{
 
-
-    font-size: 1rem;
-    padding: 7px;
-    background-color: black;
-    color: white;
-    border-radius: 25px;
-}
-.page-3-content h4{
+.page-3-content h4 {
     font-size: 4vw;
     font-weight: 500;
 }
 
-
-.page-3-elements{
+.page-3-elements {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 80vh;
     width: 100%;
- margin-top: 1rem;
     margin-top: 10vw;
-    position: relative;
-  
 }
-.box{
+
+.box {
     height: 100%;
     width: 32%;
-    
     position: relative;
-    
-
- 
 }
-.page-3-elements .box video{
+
+.page-3-elements .box video {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: center;
-cursor: pointer;
-opacity: 0;
-z-index: 1;
-border-radius: 0px;
-
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.5s ease-in-out;
 }
+
 .page-3-elements .box img {
-    width: 100%;
     height: 100%;
+    width: 100%;
     object-fit: cover;
-    object-position: center;
     position: absolute;
-    z-index: 2; /* Ensures image is on top */
-    transition: opacity 1s ease-in;
-    opacity: 1; /* Initially visible */
-
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .page-3-elements .box:hover img {
-
-    opacity: 0%;
+    opacity: 0;
 }
 
-.page-3-elements .box:hover video{
+.page-3-elements .box:hover video {
     opacity: 1;
 }
 
-
-/* Page-4 */
-
-
-.page-4{
-    height: 90vh;
-    width: 100%;
-    position: relative;
-}
-
-
-
-
-/* Page-5 */
-.page-5{
- 
-
+/* Page 5 */
+.page-5 {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -274,38 +196,22 @@ border-radius: 0px;
     position: relative;
 }
 
-.page-5 svg{
+.page-5 svg {
     position: absolute;
     height: 50%;
-z-index: 1;
+    z-index: 1;
     pointer-events: none;
-
- 
 }
 
-/* Page-6 */
-.page-6{
+/* Footer */
+footer {
+    background-color: black;
     height: 100vh;
     width: 100%;
-    position: relative;
-    padding: 4vw 0;
-}
-.page-6-top h1{
-    font-size: 8vw;
-font-family: RH;
-font-weight: 100;
-    width: 95%;
-    margin-left: 3vw;
-    border-bottom: 2px solid black;
+    padding: 3vw;
+    color: #97958F;
 }
 
-.swip{
-    position: relative;
-    height: 50vh;
-    width: 100%;
+.footer .btn-1 {
+    transition: all 0.3s ease-in-out;
 }
-
-
-
-
-
