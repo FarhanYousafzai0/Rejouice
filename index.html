@@ -203,59 +203,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-          spaceBetween: 30,
-         loop: true,
-          autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-        });
+   <script>
+    // Swiper Initialization
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    });
 
+    // GSAP Timeline for Loader and Page Transitions
+    let tl = gsap.timeline();
 
+    // Loader Animation
+    tl.from(".loader h3", {
+        x: 40,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.1,
+    })
+    .to(".loader h3", {
+        opacity: 0,
+        x: -40,
+        duration: 1,
+        stagger: 0.1,
+    })
+    .to(".loader", {
+        opacity: 0,
+        duration: 0.5,
+    })
+    .set(".loader", {
+        display: "none", // Ensures the loader is removed after animation
+    });
 
-        let tl = gsap.timeline();
+    // Hero Section Animation
+    tl.from(".page-1-content h1 span", {
+        y: 100,
+        duration: 1,
+        opacity: 0,
+        stagger: 0.1,
+        delay: -0.6,
+    });
+</script>
 
-tl.from(".loader h3", {
-  x: 40,
-  opacity: 0,
-  duration: 1,
-  stagger: 0.1,
-})
-  .to(".loader h3", {
-    opacity: 0,
-    x: -40,
-    duration: 1,
-    stagger: 0.1,
-  })
-  .to(".loader", {
-    opacity: 0,
-    duration: 0.5,
-  })
-
-
-tl.from(".page-1-content h1 span",{
-
-    y:100,
-    duration:1,
-    opacity:0,
-    stagger:0.1,
-  delay:-0.6,
-    
-})
-
-
-
-
-
-  .set(".loader", {
-    display: "none",
-  });
-
-
- 
-      </script>
     <!-- Custom Scripts -->
     <script src="script.js"></script>
     
